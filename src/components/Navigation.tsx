@@ -32,10 +32,23 @@ export const Navigation = () => {
             </div>
           </div>
           
-          <div className="flex items-center">
+          <div className="flex items-center space-x-4">
             <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
               ✓ OneFlow Connected
             </div>
+            
+            {/* Prominent AI Chat Button */}
+            <Link
+              to="/chat"
+              className={`inline-flex items-center px-4 py-2 rounded-lg font-semibold text-sm transition-colors ${
+                location.pathname === '/chat'
+                  ? 'bg-blue-600 text-white shadow-lg'
+                  : 'bg-blue-500 text-white hover:bg-blue-600 shadow-md hover:shadow-lg'
+              }`}
+            >
+              <span className="mr-2">🤖</span>
+              AI Chat
+            </Link>
           </div>
         </div>
       </div>
@@ -57,6 +70,21 @@ export const Navigation = () => {
               {item.label}
             </Link>
           ))}
+          
+          {/* Prominent AI Chat Button for Mobile */}
+          <div className="px-3 pt-2">
+            <Link
+              to="/chat"
+              className={`flex items-center justify-center w-full px-4 py-3 rounded-lg font-semibold text-base transition-colors ${
+                location.pathname === '/chat'
+                  ? 'bg-blue-600 text-white shadow-lg'
+                  : 'bg-blue-500 text-white hover:bg-blue-600 shadow-md'
+              }`}
+            >
+              <span className="mr-2">🤖</span>
+              AI Chat Assistant
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

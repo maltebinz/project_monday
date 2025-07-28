@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ClientCard } from '../components/ClientCard';
 
 const mockClients = [
@@ -87,8 +88,21 @@ export const Dashboard = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Client Management Dashboard</h1>
-          <p className="text-gray-600">Automated contract workflows and client relationship management</p>
+          <div className="flex justify-between items-start">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900 mb-2">Client Management Dashboard</h1>
+              <p className="text-gray-600">Automated contract workflows and client relationship management</p>
+            </div>
+            
+            {/* AI Chat Call-to-Action */}
+            <Link
+              to="/chat"
+              className="flex items-center bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:from-blue-600 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            >
+              <span className="mr-2">🤖</span>
+              Try AI Assistant
+            </Link>
+          </div>
         </div>
 
         {/* OneFlow Sync Status */}
@@ -134,6 +148,27 @@ export const Dashboard = () => {
               <option value="web">Web Development</option>
               <option value="marketing">Marketing</option>
             </select>
+          </div>
+        </div>
+
+        {/* AI Assistant Promotion */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-6 mb-8">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <div className="bg-blue-100 p-4 rounded-full mr-4">
+                <span className="text-3xl">🤖</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">AI-Powered Client Management</h3>
+                <p className="text-gray-600">Get intelligent assistance with workflows, contract management, and client insights using Google Gemini AI.</p>
+              </div>
+            </div>
+            <Link
+              to="/chat"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+            >
+              Start Chat →
+            </Link>
           </div>
         </div>
 
